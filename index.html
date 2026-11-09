@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soutien Scolaire - Mathématiques & Physique</title>
+    <style>
+        :root {
+            --primary-blue: #0099cc;
+            --math-gold: #cca625;
+            --physics-green: #90cc56;
+            --dark-gray: #333333;
+            --light-bg: #f9fbfd;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-bg);
+        }
+
+        header {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 3px solid var(--primary-blue);
+        }
+
+        .main-title {
+            color: var(--primary-blue);
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #555555;
+            max-width: 700px;
+            margin: 20px auto 0 auto;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .grid-subjects {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 30px auto;
+        }
+
+        .subject-badge {
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .bg-math { background-color: var(--math-gold); }
+        .bg-physics { background-color: var(--physics-green); }
+
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        .info-card h2 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+
+        .levels {
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 20px 0;
+            color: var(--primary-blue);
+        }
+
+        .levels span {
+            font-weight: bold;
+            color: var(--dark-gray);
+        }
+
+        .price-box {
+            text-align: center;
+            background-color: #ffffff;
+            border: 2px dashed var(--primary-blue);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 35px 0;
+        }
+
+        .price-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .main-price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .tax-price {
+            font-size: 1.8rem;
+            color: var(--physics-green);
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .footer-info {
+            background-color: #ffffff;
+            padding: 30px;
+            border-top: 1px solid #e1e8ed;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .contact-item {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .siren {
+            font-size: 0.8rem;
+            color: #999999;
+            margin-top: 25px;
+        }
+
+        @media (max-width: 600px) {
+            .main-title { font-size: 2rem; }
+            .main-price { font-size: 2.2rem; }
+            .tax-price { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="main-title">Soutien Scolaire</h1>
+        <p class="subtitle">
+            Expérimenté et titulaire du CAPES, je vous propose des cours de soutien toute l’année. Professionnel ayant accompagné des dizaines et des centaines d’élèves vers la réussite.
+        </p>
+    </header>
+
+    <div class="container">
+        
+        <div class="grid-subjects">
+            <div class="subject-badge bg-math">Mathématiques</div>
+            <div class="subject-badge bg-physics">Physique - Chimie</div>
+        </div>
+
+        <div class="levels">
+            <p><strong>Tous niveaux :</strong> collège / lycée / étudiant / adultes en formation</p>
+            <p style="margin-top: 8px; font-size: 1.1rem; color: #555;">Préparation intensive aux examens : <strong>Brevet</strong> & <strong>Baccalauréat</strong></p>
+        </div>
+
+        <div class="info-card">
+            <h2>Formules & Déplacements</h2>
+            <p>Pour s'adapter au mieux à vos besoins et à votre rythme, deux options s'offrent à vous :</p>
+            <ul style="margin-left: 20px; margin-top: 10px; gap: 5px; display: flex; flex-direction: column;">
+                <li><strong>À domicile :</strong> Progressez sereinement dans votre environnement familier tout en bénéficiant des avantages fiscaux.</li>
+                <li><strong>En local de formation :</strong> Rejoignez-moi directement à mon espace de travail situé à <strong>Casavox, 18 Rue du Faub. Saint-Jacques, 37500 Chinon</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="price-box">
+            <p class="price-title">Des tarifs transparents et avantageux</p>
+            <div class="price-title">À partir de</div>
+            <div class="main-price">40 € <span style="font-size: 1.5rem; font-weight: normal; color: #666;">/ h</span></div>
+            <div style="margin-top: 15px;" class="price-title">Soit seulement</div>
+            <div class="tax-price">25 € / h à domicile</div>
+            <p style="font-size: 0.9rem; color: #666; margin-top: 5px;">*Après déduction ou crédit d'impôt immédiat (50% de réduction fiscale)</p>
+        </div>
+
+    </div>
+
+    <div class="footer-info">
+        <h2>Contactez-moi</h2>
+        <p style="margin-bottom: 15px; color: #666;">Disponible pour planifier un premier bilan ou réserver vos créneaux de cours</p>
+        <div class="contact-item">Téléphone : <a href="tel:0668995526">06 68 99 55 26</a></div>
+        <div class="contact-item">Email : <a href="mailto:menium@yahoo.fr">menium@yahoo.fr</a></div>
+        
+        <div class="siren">SIREN : 813 587 580</div>
+    </div>
+
+</body>
+</html>
