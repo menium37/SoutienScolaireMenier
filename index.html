@@ -1,221 +1,537 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soutien Scolaire - Mathématiques & Physique</title>
-    <style>
-        :root {
-            --primary-blue: #0099cc;
-            --math-gold: #cca625;
-            --physics-green: #90cc56;
-            --dark-gray: #333333;
-            --light-bg: #f9fbfd;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-gray);
-            background-color: var(--light-bg);
-        }
-
-        header {
-            background-color: #ffffff;
-            text-align: center;
-            padding: 40px 20px;
-            border-bottom: 3px solid var(--primary-blue);
-        }
-
-        .main-title {
-            color: var(--primary-blue);
-            font-size: 2.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            color: #555555;
-            max-width: 700px;
-            margin: 20px auto 0 auto;
-            font-style: italic;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .grid-subjects {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 500px;
-            margin: 30px auto;
-        }
-
-        .subject-badge {
-            color: white;
-            text-align: center;
-            padding: 12px;
-            font-size: 1.4rem;
-            font-weight: bold;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .bg-math { background-color: var(--math-gold); }
-        .bg-physics { background-color: var(--physics-green); }
-
-        .info-card {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-            border-left: 5px solid var(--primary-blue);
-        }
-
-        .info-card h2 {
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-            font-size: 1.6rem;
-        }
-
-        .levels {
-            text-align: center;
-            font-size: 1.2rem;
-            margin: 20px 0;
-            color: var(--primary-blue);
-        }
-
-        .levels span {
-            font-weight: bold;
-            color: var(--dark-gray);
-        }
-
-        .price-box {
-            text-align: center;
-            background-color: #ffffff;
-            border: 2px dashed var(--primary-blue);
-            padding: 25px;
-            border-radius: 8px;
-            margin: 35px 0;
-        }
-
-        .price-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .main-price {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--primary-blue);
-        }
-
-        .tax-price {
-            font-size: 1.8rem;
-            color: var(--physics-green);
-            font-weight: bold;
-            margin-top: 5px;
-        }
-
-        .footer-info {
-            background-color: #ffffff;
-            padding: 30px;
-            border-top: 1px solid #e1e8ed;
-            text-align: center;
-            margin-top: 5px;
-        }
-
-        .contact-item {
-            margin: 10px 0;
-            font-size: 1.1rem;
-        }
-
-        .contact-item a {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        .siren {
-            font-size: 0.8rem;
-            color: #999999;
-            margin-top: 25px;
-        }
-
-        @media (max-width: 600px) {
-            .main-title { font-size: 2rem; }
-            .main-price { font-size: 2.2rem; }
-            .tax-price { font-size: 1.4rem; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cours particuliers de mathématiques et de physique à Chinon et à domicile. Tous niveaux, préparation au brevet et au bac.">
+  <meta name="theme-color" content="#101d32">
+  <title>Cours de mathématiques & physique | Chinon</title>
+  <style>
+    :root {
+      --navy: #101d32;
+      --navy-2: #182943;
+      --cream: #f7f5ef;
+      --paper: #fffefa;
+      --gold: #c7a66a;
+      --gold-light: #e6d5b2;
+      --ink: #202a38;
+      --muted: #687383;
+      --line: rgba(16, 29, 50, .12);
+      --shadow: 0 22px 60px rgba(16, 29, 50, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .sans { font-family: Arial, Helvetica, sans-serif; }
+    .topbar {
+      background: var(--navy);
+      color: #f8f5ee;
+      font: 500 13px/1.4 Arial, sans-serif;
+      letter-spacing: .04em;
+    }
+    .topbar-inner {
+      width: min(1160px, calc(100% - 44px));
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 11px 0;
+    }
+    .topbar a { text-decoration: none; color: var(--gold-light); }
+    header {
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav {
+      width: min(1160px, calc(100% - 44px));
+      margin: auto;
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      text-decoration: none;
+      color: var(--navy);
+    }
+    .brand-mark {
+      width: 43px; height: 43px;
+      display: grid; place-items: center;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 24px;
+      border-radius: 50%;
+    }
+    .brand strong {
+      display: block;
+      font-size: 17px;
+      letter-spacing: .02em;
+      line-height: 1.2;
+    }
+    .brand small {
+      display: block;
+      margin-top: 4px;
+      font: 10px Arial, sans-serif;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font: 13px Arial, sans-serif;
+    }
+    .nav-links a { text-decoration: none; color: #4c5664; }
+    .nav-links a:hover { color: #9b7943; }
+    .nav-cta, .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 1px solid var(--gold);
+      background: var(--gold);
+      color: var(--navy);
+      padding: 13px 19px;
+      text-decoration: none;
+      font: 700 12px Arial, sans-serif;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      transition: .2s ease;
+    }
+    .nav-cta:hover, .button:hover { background: #d7bb89; transform: translateY(-1px); }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(ellipse at 82% 25%, rgba(199,166,106,.18), transparent 32%),
+        linear-gradient(120deg, #101d32 0%, #172943 58%, #203550 100%);
+    }
+    .hero::after {
+      content: "∑";
+      position: absolute;
+      right: 5%;
+      top: 4%;
+      color: rgba(230,213,178,.07);
+      font: 360px/1 Georgia, serif;
+      pointer-events: none;
+    }
+    .hero-inner {
+      width: min(1160px, calc(100% - 44px));
+      margin: auto;
+      min-height: 590px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 55px;
+      padding: 86px 0;
+      position: relative;
+      z-index: 1;
+    }
+    .eyebrow {
+      color: var(--gold-light);
+      font: 700 11px Arial, sans-serif;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .eyebrow::before { content: ""; width: 35px; height: 1px; background: var(--gold); }
+    h1 {
+      font-size: clamp(42px, 5.2vw, 68px);
+      line-height: 1.08;
+      font-weight: 400;
+      letter-spacing: -.035em;
+      margin: 24px 0;
+      max-width: 720px;
+    }
+    h1 em { color: var(--gold-light); font-weight: 400; }
+    .hero-copy {
+      max-width: 580px;
+      color: #d8dfE8;
+      font: 16px/1.8 Arial, sans-serif;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
+    .button.secondary {
+      color: white; border-color: rgba(255,255,255,.38); background: transparent;
+    }
+    .button.secondary:hover { background: rgba(255,255,255,.1); }
+    .hero-note {
+      margin-top: 25px;
+      color: #c2cbd7;
+      font: 12px Arial, sans-serif;
+      letter-spacing: .03em;
+    }
+    .hero-card {
+      justify-self: end;
+      width: min(100%, 360px);
+      padding: 35px 32px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(230,213,178,.4);
+      box-shadow: 0 25px 70px rgba(0,0,0,.16);
+      backdrop-filter: blur(4px);
+    }
+    .hero-card .symbol {
+      color: var(--gold-light);
+      font-size: 43px;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+    .hero-card h2 { font-size: 25px; font-weight: 400; margin: 0 0 12px; }
+    .hero-card p { color: #d2d9e2; font: 14px/1.8 Arial, sans-serif; margin: 0; }
+    .hero-card .rule { width: 45px; height: 2px; background: var(--gold); margin: 22px 0; }
+    .section {
+      width: min(1080px, calc(100% - 44px));
+      margin: auto;
+      padding: 94px 0;
+    }
+    .section-heading { max-width: 680px; margin: 0 auto 48px; text-align: center; }
+    .kicker {
+      color: #9b7943;
+      font: 700 11px Arial, sans-serif;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    h2.section-title {
+      color: var(--navy);
+      font-size: clamp(32px, 4vw, 45px);
+      line-height: 1.15;
+      font-weight: 400;
+      margin: 13px 0 15px;
+    }
+    .section-heading p { color: var(--muted); font: 15px/1.8 Arial, sans-serif; }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .feature {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 30px 27px;
+      min-height: 220px;
+    }
+    .feature .icon {
+      color: #a88750;
+      font-size: 27px;
+      margin-bottom: 17px;
+    }
+    .feature h3 { color: var(--navy); font-size: 21px; font-weight: 400; margin: 0 0 9px; }
+    .feature p { color: var(--muted); font: 14px/1.75 Arial, sans-serif; margin: 0; }
+    .experience {
+      background: #eeece5;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .experience-inner {
+      width: min(1080px, calc(100% - 44px));
+      margin: auto;
+      padding: 82px 0;
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .experience-number {
+      color: var(--gold);
+      font-size: 90px;
+      line-height: 1;
+      text-align: center;
+    }
+    .experience-label {
+      text-align: center;
+      color: var(--navy);
+      font: 700 11px/1.7 Arial, sans-serif;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-top: 13px;
+    }
+    .experience-copy h2 { font-size: 37px; font-weight: 400; color: var(--navy); line-height: 1.2; margin: 0 0 18px; }
+    .experience-copy p { color: #626d79; font: 15px/1.9 Arial, sans-serif; margin: 0; }
+    .exam-band {
+      background: var(--navy-2);
+      color: white;
+      padding: 67px 22px;
+      text-align: center;
+    }
+    .exam-band h2 { font-size: 35px; font-weight: 400; margin: 0 0 12px; }
+    .exam-band p { color: #d1d9e3; font: 14px/1.8 Arial, sans-serif; margin: 0 auto 25px; max-width: 620px; }
+    .exam-tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+    .exam-tags span {
+      border: 1px solid rgba(230,213,178,.55);
+      color: var(--gold-light);
+      padding: 9px 19px;
+      font: 12px Arial, sans-serif;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .pricing {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .price-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 34px;
+    }
+    .price-card.highlight { background: var(--navy); color: white; border-color: var(--navy); }
+    .price-card h3 { font-size: 20px; font-weight: 400; margin: 0 0 12px; }
+    .price {
+      font-size: 47px;
+      line-height: 1.15;
+      color: #a88750;
+      margin: 12px 0;
+    }
+    .price small { font: 13px Arial, sans-serif; color: var(--muted); }
+    .highlight .price small { color: #c7d0dc; }
+    .price-card p { color: var(--muted); font: 13px/1.8 Arial, sans-serif; margin: 0; }
+    .highlight p { color: #d1d9e3; }
+    .price-footnote {
+      max-width: 800px; margin: 18px auto 0;
+      color: var(--muted); font: 12px/1.7 Arial, sans-serif;
+    }
+    .contact-section { background: #eeece5; }
+    .contact-grid {
+      width: min(1080px, calc(100% - 44px));
+      margin: auto;
+      padding: 88px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+    }
+    .contact-copy h2 { color: var(--navy); font-size: 42px; line-height: 1.15; font-weight: 400; margin: 13px 0 17px; }
+    .contact-copy > p { color: var(--muted); font: 15px/1.8 Arial, sans-serif; }
+    .contact-details { display: grid; gap: 17px; margin-top: 30px; }
+    .contact-item { display: flex; gap: 14px; align-items: flex-start; }
+    .contact-icon { color: #a88750; font-size: 20px; width: 25px; }
+    .contact-item strong { display: block; color: var(--navy); font: 700 12px Arial, sans-serif; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 4px; }
+    .contact-item a, .contact-item span { color: #5d6876; font: 14px/1.6 Arial, sans-serif; text-decoration: none; }
+    .contact-item a:hover { color: #9b7943; }
+    .contact-panel {
+      background: var(--paper);
+      padding: 35px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    .contact-panel h3 { color: var(--navy); font-size: 24px; font-weight: 400; margin: 0 0 13px; }
+    .contact-panel p { color: var(--muted); font: 14px/1.8 Arial, sans-serif; }
+    .contact-panel .button { margin-top: 12px; }
+    footer {
+      background: #0b1525;
+      color: #aeb8c5;
+      padding: 25px 22px;
+      text-align: center;
+      font: 11px/1.8 Arial, sans-serif;
+      letter-spacing: .04em;
+    }
+    footer strong { color: var(--gold-light); font-weight: 400; }
+    @media (max-width: 780px) {
+      .topbar-inner { justify-content: center; flex-wrap: wrap; text-align: center; }
+      .nav { min-height: 72px; }
+      .nav-links { display: none; }
+      .hero-inner { grid-template-columns: 1fr; gap: 42px; padding: 70px 0; }
+      .hero-card { justify-self: start; }
+      .hero::after { right: -20%; top: 10%; font-size: 260px; }
+      .features { grid-template-columns: 1fr; }
+      .feature { min-height: auto; }
+      .experience-inner { grid-template-columns: 1fr; gap: 35px; }
+      .experience-number { font-size: 75px; }
+      .pricing { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 35px; }
+    }
+    @media (max-width: 430px) {
+      .topbar-inner, .nav, .hero-inner, .section, .experience-inner, .contact-grid { width: min(100% - 32px, 1080px); }
+      .brand strong { font-size: 14px; }
+      .brand small { font-size: 8px; }
+      .nav-cta { padding: 11px 12px; font-size: 10px; }
+      h1 { font-size: 42px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .button { width: 100%; }
+      .section { padding: 70px 0; }
+      .contact-panel { padding: 26px 22px; }
+    }
+  </style>
 </head>
 <body>
-
-    <header>
-        <h1 class="main-title">Soutien Scolaire</h1>
-        <p class="subtitle">
-            Expérimenté et titulaire du CAPES, je vous propose des cours de soutien toute l’année. Professionnel ayant accompagné des dizaines et des centaines d’élèves vers la réussite.
-        </p>
-    </header>
-
-    <div class="container">
-        
-        <div class="grid-subjects">
-            <div class="subject-badge bg-math">Mathématiques</div>
-            <div class="subject-badge bg-physics">Physique - Chimie</div>
-        </div>
-
-        <div class="levels">
-            <p><strong>Tous niveaux :</strong> collège / lycée / étudiant / adultes en formation</p>
-            <p style="margin-top: 8px; font-size: 1.1rem; color: #555;">Préparation intensive aux examens : <strong>Brevet</strong> & <strong>Baccalauréat</strong></p>
-        </div>
-
-        <div class="info-card">
-            <h2>Formules & Déplacements</h2>
-            <p>Pour s'adapter au mieux à vos besoins et à votre rythme, deux options s'offrent à vous :</p>
-            <ul style="margin-left: 20px; margin-top: 10px; gap: 5px; display: flex; flex-direction: column;">
-                <li><strong>À domicile :</strong> Progressez sereinement dans votre environnement familier tout en bénéficiant des avantages fiscaux.</li>
-                <li><strong>En local de formation :</strong> Rejoignez-moi directement à mon espace de travail situé à <strong>Casavox, 18 Rue du Faub. Saint-Jacques, 37500 Chinon</strong>.</li>
-            </ul>
-        </div>
-
-        <div class="price-box">
-            <p class="price-title">Des tarifs transparents et avantageux</p>
-            <div class="price-title">À partir de</div>
-            <div class="main-price">40 € <span style="font-size: 1.5rem; font-weight: normal; color: #666;">/ h</span></div>
-            <div style="margin-top: 15px;" class="price-title">Soit seulement</div>
-            <div class="tax-price">25 € / h à domicile</div>
-            <p style="font-size: 0.9rem; color: #666; margin-top: 5px;">*Après déduction ou crédit d'impôt immédiat (50% de réduction fiscale)</p>
-        </div>
-
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>COURS PARTICULIERS · MATHÉMATIQUES & PHYSIQUE</span>
+      <a href="tel:+33668995526">06 68 99 55 26</a>
     </div>
+  </div>
 
-    <div class="footer-info">
-        <h2>Contactez-moi</h2>
-        <p style="margin-bottom: 15px; color: #666;">Disponible pour planifier un premier bilan ou réserver vos créneaux de cours</p>
-        <div class="contact-item">Téléphone : <a href="tel:0668995526">06 68 99 55 26</a></div>
-        <div class="contact-item">Email : <a href="mailto:menium@yahoo.fr">menium@yahoo.fr</a></div>
-        
-        <div class="siren">SIREN : 813 587 580</div>
-    </div>
+  <header>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="brand" href="#accueil" aria-label="Accueil">
+        <span class="brand-mark">∑</span>
+        <span><strong>Cours de sciences</strong><small>Mathématiques · Physique</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#cours">Les cours</a>
+        <a href="#approche">Mon approche</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="nav-cta" href="tel:+33668995526">Me contacter <span>↗</span></a>
+    </nav>
+  </header>
 
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">À Chinon et ses environs</div>
+          <h1>Comprendre les sciences.<br><em>Réussir avec confiance.</em></h1>
+          <p class="hero-copy">
+            Des cours particuliers de mathématiques et de physique, adaptés à chaque élève et à chaque objectif.
+            Un accompagnement expérimenté, du travail régulier jusqu'à la préparation des examens.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="tel:+33668995526">☎ &nbsp; 06 68 99 55 26</a>
+            <a class="button secondary" href="#cours">Découvrir les cours &nbsp; ↓</a>
+          </div>
+          <div class="hero-note">Tous niveaux · Cours à domicile ou dans mon local à Chinon</div>
+        </div>
+        <aside class="hero-card">
+          <div class="symbol">∫</div>
+          <h2>Un accompagnement sur mesure</h2>
+          <div class="rule"></div>
+          <p>Reprendre les bases, consolider les acquis, gagner en méthode et progresser durablement : chaque cours s'adapte aux besoins de l'élève.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="cours">
+      <div class="section-heading">
+        <div class="kicker">Un enseignement adapté</div>
+        <h2 class="section-title">Les sciences à votre rythme</h2>
+        <p>Un accompagnement personnalisé pour mieux comprendre, prendre confiance et atteindre ses objectifs scolaires.</p>
+      </div>
+      <div class="features">
+        <article class="feature">
+          <div class="icon">∑</div>
+          <h3>Mathématiques</h3>
+          <p>Compréhension des notions, entraînement, résolution de problèmes et acquisition de méthodes de travail efficaces.</p>
+        </article>
+        <article class="feature">
+          <div class="icon">⚛</div>
+          <h3>Physique</h3>
+          <p>Explication des concepts, maîtrise des raisonnements et mise en pratique à travers des exercices adaptés.</p>
+        </article>
+        <article class="feature">
+          <div class="icon">✦</div>
+          <h3>Tous niveaux</h3>
+          <p>Un suivi adapté au niveau de l'élève, à son rythme, à ses difficultés et aux objectifs qu'il souhaite atteindre.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="experience" id="approche">
+      <div class="experience-inner">
+        <div>
+          <div class="experience-number">✧</div>
+          <div class="experience-label">Expérience & pédagogie</div>
+        </div>
+        <div class="experience-copy">
+          <div class="kicker">Un professeur expérimenté</div>
+          <h2>Faire progresser chaque élève, avec méthode.</h2>
+          <p>
+            Fort d'une solide expérience de l'enseignement, j'ai accompagné des dizaines — et même des centaines —
+            d'élèves dans leur parcours en mathématiques et en physique. Mon objectif : identifier les besoins de chacun,
+            expliquer avec clarté et donner les outils pour progresser avec confiance et autonomie.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="exam-band">
+      <div class="kicker">Objectif examen</div>
+      <h2>Préparer les échéances importantes</h2>
+      <p>Des révisions ciblées, des exercices d'application et une préparation méthodique pour aborder les examens plus sereinement.</p>
+      <div class="exam-tags">
+        <span>Brevet des collèges</span>
+        <span>Baccalauréat</span>
+      </div>
+    </section>
+
+    <section class="section" id="tarifs">
+      <div class="section-heading">
+        <div class="kicker">Des tarifs clairs</div>
+        <h2 class="section-title">Choisissez votre formule</h2>
+        <p>Les cours peuvent se dérouler à votre domicile ou dans mon local à Chinon.</p>
+      </div>
+      <div class="pricing">
+        <article class="price-card">
+          <h3>Dans mon local à Chinon</h3>
+          <div class="price">40 €<small> / heure</small></div>
+          <p>À partir de 40 € par heure, au local Casavox, 18 rue du Faubourg Saint-Jacques à Chinon.</p>
+        </article>
+        <article class="price-card highlight">
+          <h3>À domicile</h3>
+          <div class="price">25 €<small> / heure*</small></div>
+          <p>Soit 25 € par heure après crédit d'impôt, sous réserve de remplir les conditions d'éligibilité au dispositif applicable.</p>
+        </article>
+      </div>
+      <p class="price-footnote">* Le montant indiqué après crédit d'impôt est donné à titre indicatif. L'avantage fiscal dépend de votre situation personnelle et des conditions légales en vigueur. Renseignez-vous avant toute réservation.</p>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-grid">
+        <div class="contact-copy">
+          <div class="kicker">Prenons contact</div>
+          <h2>Parlons de vos objectifs.</h2>
+          <p>Vous souhaitez des renseignements ou organiser un premier cours ? Contactez-moi directement par téléphone ou par email.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">☎</div>
+              <div><strong>Téléphone</strong><a href="tel:+33668995526">06 68 99 55 26</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">✉</div>
+              <div><strong>Email</strong><a href="mailto:menium@yahoo.fr">menium@yahoo.fr</a></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">⌖</div>
+              <div><strong>Adresse du local</strong><span>Casavox<br>18 rue du Faubourg Saint-Jacques<br>37500 Chinon</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-panel">
+          <h3>Un besoin, une question ?</h3>
+          <p>Indiquez-moi le niveau de l'élève, la matière concernée et votre objectif. Nous pourrons échanger sur la formule la plus adaptée.</p>
+          <a class="button" href="mailto:menium@yahoo.fr?subject=Demande%20de%20renseignements%20-%20Cours%20de%20sciences">✉ &nbsp; Envoyer un email</a>
+          <p style="font-size:12px; margin-top:22px;">Vous pouvez également me joindre directement au <a href="tel:+33668995526" style="color:#9b7943; font-weight:bold; text-decoration:none;">06 68 99 55 26</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Cours particuliers de mathématiques & physique</strong><br>
+    Chinon · Tous niveaux · Préparation au brevet et au baccalauréat<br>
+    © <span id="year"></span> — Tous droits réservés
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
