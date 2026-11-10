@@ -136,9 +136,9 @@
       margin: auto;
       min-height: 590px;
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 55px;
+      gap: 40px;
       padding: 86px 0;
       position: relative;
       z-index: 1;
@@ -180,26 +180,32 @@
     }
     .hero-card {
       justify-self: end;
-      width: min(100%, 360px);
-      padding: 35px 32px;
+      width: min(100%, 500px);
+      padding: 32px;
       background: rgba(255,255,255,.07);
       border: 1px solid rgba(230,213,178,.4);
       box-shadow: 0 25px 70px rgba(0,0,0,.16);
       backdrop-filter: blur(4px);
     }
+    .hero-card-heading {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
     .hero-card .symbol {
+      flex: 0 0 auto;
       color: var(--gold-light);
       font-size: 43px;
       line-height: 1;
-      margin-bottom: 22px;
     }
-    .hero-card h2 { font-size: 25px; font-weight: 400; margin: 0 0 12px; }
+    .hero-card h2 { font-size: 25px; font-weight: 400; line-height: 1.2; margin: 0; }
     .hero-card img {
       display: block;
       width: 100%;
-      height: 180px;
-      object-fit: cover;
-      margin: 18px 0;
+      height: auto;
+      object-fit: contain;
+      margin: 0 0 20px;
     }
     .hero-card p { color: #d2d9e2; font: 14px/1.8 Arial, sans-serif; margin: 0; }
     .hero-card .rule { width: 45px; height: 2px; background: var(--gold); margin: 22px 0; }
@@ -356,7 +362,7 @@
       .nav { min-height: 72px; }
       .nav-links { display: none; }
       .hero-inner { grid-template-columns: 1fr; gap: 42px; padding: 70px 0; }
-      .hero-card { justify-self: start; }
+      .hero-card { justify-self: start; width: min(100%, 500px); }
       .hero::after { right: -20%; top: 10%; font-size: 260px; }
       .features { grid-template-columns: 1fr; }
       .feature { min-height: auto; }
@@ -407,7 +413,7 @@
       <div class="hero-inner">
         <div>
           <div class="eyebrow">À Chinon et ses environs</div>
-          <h1>Comprendre les sciences.<br><em>Réussir avec confiance.</em></h1>
+          <h1>Soutien scolaire en maths et physiques.<br><em>Réussir avec confiance.</em></h1>
           <p class="hero-copy">
             Des cours particuliers de mathématiques et de physique, adaptés à chaque élève et à chaque objectif.
             Un accompagnement expérimenté.
@@ -419,9 +425,10 @@
           <div class="hero-note">Tous niveaux · Cours à domicile ou dans mon local à Chinon</div>
         </div>
         <aside class="hero-card">
-          <div class="symbol">∫</div>
-          <h2>Un accompagnement sur mesure</h2>
-          <div class="rule"></div>
+          <div class="hero-card-heading">
+            <div class="symbol">∫</div>
+            <h2>Un accompagnement sur mesure</h2>
+          </div>
           <img src="assets/cours.jpg" alt="Cours particuliers de mathématiques et de physique">
           <p>Fort d'une solide expérience de l'enseignement, j'ai accompagné des dizaines — et même des centaines — d'élèves dans leur parcours en mathématiques et en physique. Mon objectif : identifier les besoins de chacun, expliquer avec clarté et donner les outils pour progresser avec confiance et autonomie.</p>
         </aside>
